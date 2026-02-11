@@ -1,0 +1,32 @@
+# 忽略所有编译输出 (Keil & VSCode)
+**/Objects/
+**/Listings/
+**/DebugConfig/
+**/RTE/
+.vscode/
+.vs/
+
+# 忽略垃圾文件后缀
+*.o
+*.d
+*.crf
+*.dep
+*.axf
+*.hex
+*.htm
+*.lnp
+*.sct
+*.map
+*.lst
+*.bak
+*.db
+*.ipch
+
+# 忽略 Keil 工程配置 & 压缩包
+*.uvoptx
+*.uvguix.*
+*.scvd
+*.mmap
+JLinkLog.txt
+*.zip
+*.rar

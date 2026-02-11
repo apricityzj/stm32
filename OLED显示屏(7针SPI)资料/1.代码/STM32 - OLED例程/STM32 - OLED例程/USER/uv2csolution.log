@@ -1,0 +1,9 @@
+1 out of 1 target(s) converted
+Created solution: C:/Users/Lenovo/Desktop/stm_all/OLED显示屏(7针SPI)资料/1.代码/STM32 - OLED例程/STM32 - OLED例程/USER/STM32_CGMCU.csolution.yml
+With projects:
+- C:/Users/Lenovo/Desktop/stm_all/OLED显示屏(7针SPI)资料/1.代码/STM32 - OLED例程/STM32 - OLED例程/USER/STM32_CGMCU.cproject.yml
+Error: 0 error(s), 1 warning(s):
+Warnings:
+	Fix compiler version (6.18.0) is configured in the uVision project.
+	However 6.22.0, the earliest version available through vcpkg,
+	is specified in the generated vcpkg-configuration.json and csolution file.

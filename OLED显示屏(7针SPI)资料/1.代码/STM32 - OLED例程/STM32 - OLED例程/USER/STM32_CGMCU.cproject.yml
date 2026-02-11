@@ -1,0 +1,93 @@
+project:
+  packs:
+    - pack: Keil::STM32F1xx_DFP@^2.4.0
+  setups:
+    - setup: Options for DHT11
+      add-path:
+        - .
+        - ../CORE
+        - ../HARDWARE/DHT11
+        - ../HARDWARE/LED
+        - ../STM32F10x_FWLib/inc
+        - ../SYSTEM/delay
+        - ../SYSTEM/sys
+        - ../SYSTEM/usart
+        - ../HARDWARE/OLED
+      debug: "on"
+      define:
+        - USE_STDPERIPH_DRIVER
+        - __MICROLIB
+      define-asm:
+        - __MICROLIB
+      misc:
+        - C:
+            - -std=c99
+          C-CPP:
+            - -fno-rtti
+            - -funsigned-char
+            - -fshort-enums
+            - -fshort-wchar
+            - -ffunction-sections
+            - -Wno-packed
+            - -Wno-missing-variable-declarations
+            - -Wno-missing-prototypes
+            - -Wno-missing-noreturn
+            - -Wno-sign-conversion
+            - -Wno-nonportable-include-path
+            - -Wno-reserved-id-macro
+            - -Wno-unused-macros
+            - -Wno-documentation-unknown-command
+            - -Wno-documentation
+            - -Wno-license-management
+            - -Wno-parentheses-equality
+          CPP:
+            - -xc++
+            - -std=c++03
+            - -fno-exceptions
+          ASM:
+            - -masm=auto
+          Link:
+            - --library_type=microlib
+            - --map
+            - --load_addr_map_info
+            - --xref
+            - --callgraph
+            - --symbols
+            - --info sizes
+            - --info totals
+            - --info unused
+            - --info veneers
+            - --strict
+            - --summary_stderr
+            - --info summarysizes
+  linker:
+    - script: STM32_CGMCU_DHT11.sct
+  groups:
+    - group: USER
+      files:
+        - file: stm32f10x_it.c
+        - file: system_stm32f10x.c
+        - file: main.c
+    - group: HARDWARE
+      files:
+        - file: ../HARDWARE/DHT11/dht11.c
+        - file: ../HARDWARE/LED/led.c
+        - file: ../HARDWARE/OLED/oled.c
+    - group: SYSTEM
+      files:
+        - file: ../SYSTEM/delay/delay.c
+        - file: ../SYSTEM/usart/usart.c
+        - file: ../SYSTEM/sys/sys.c
+    - group: CORE
+      files:
+        - file: ../CORE/core_cm3.c
+        - file: ../CORE/startup_stm32f10x_md.s
+          misc:
+            - ASM:
+                - -masm=auto
+    - group: FWLib
+      files:
+        - file: ../STM32F10x_FWLib/src/misc.c
+        - file: ../STM32F10x_FWLib/src/stm32f10x_usart.c
+        - file: ../STM32F10x_FWLib/src/stm32f10x_gpio.c
+        - file: ../STM32F10x_FWLib/src/stm32f10x_rcc.c
