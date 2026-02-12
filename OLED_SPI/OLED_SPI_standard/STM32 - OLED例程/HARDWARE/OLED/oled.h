@@ -26,14 +26,14 @@
 #define OLED_SDA_GPIO_PORT			GPIOA
 #define OLED_SDA_GPIO_PIN				GPIO_Pin_7
 
-#define OLED_RST_GPIO_PORT			GPIOB
-#define OLED_RST_GPIO_PIN				GPIO_Pin_1
+#define OLED_RST_GPIO_PORT			GPIOA
+#define OLED_RST_GPIO_PIN				GPIO_Pin_3
 
-#define OLED_DC_GPIO_PORT				GPIOB
-#define OLED_DC_GPIO_PIN				GPIO_Pin_0
+#define OLED_DC_GPIO_PORT				GPIOA
+#define OLED_DC_GPIO_PIN				GPIO_Pin_4
 
 #define OLED_CS_GPIO_PORT				GPIOA
-#define OLED_CS_GPIO_PIN				GPIO_Pin_4
+#define OLED_CS_GPIO_PIN				GPIO_Pin_6
 
 /*********************END**********************/
 
